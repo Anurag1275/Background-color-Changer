@@ -14,10 +14,12 @@ const startchangingcolor=function(){
     document.body.style.backgroundColor=randomcolor()}
 
 };
-const stopchangingcolor=function(){
-    clearInterval(intervalid);
-    intervalid=null
-}; 
+const stopchangingcolor = function () {
+    if (intervalid) {
+        clearInterval(intervalid);
+        intervalid = null;
+    }
+};
 
 document.querySelector('#start').addEventListener('click',startchangingcolor)
 document.querySelector('#stop').addEventListener('click',stopchangingcolor)
